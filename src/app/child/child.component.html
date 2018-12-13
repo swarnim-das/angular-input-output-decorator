@@ -1,0 +1,9 @@
+<div class='child'>
+  <h2>Child component</h2>
+  <ul>
+    <li *ngFor="let todo of todos">
+      {{todo.label}}
+      <button (click)="deleteTodo(todo)">&#10005;</button>
+    </li>
+  </ul>
+</div>

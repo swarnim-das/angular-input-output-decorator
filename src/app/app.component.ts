@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'TO-DO LIST';
+
+  todos = [
+    
+  ]; 
+
+  addTodo(newTodoLabel) {
+    var newTodo = {
+      label: newTodoLabel,
+      done: false
+    };
+    this.todos.push(newTodo);
+  }
+
+  deleteTodo($event){
+    this.todos = this.todos.filter(i => i !== $event)
+  }
+
 }
