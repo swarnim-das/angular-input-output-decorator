@@ -24,4 +24,7 @@ export class AppComponent {
     this.todos = this.todos.filter(i => i !== $event)
   }
 
+  doneTodo($event){
+    $event.done=true;
+  }
 }

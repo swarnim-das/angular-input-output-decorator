@@ -3,6 +3,6 @@
 <input type="text" #newTodo />
 <button (click)="addTodo(newTodo.value); newTodo.value=''">Add</button>
 
-<app-child [todos]="todos" (delete)="deleteTodo($event)">
+<app-child [todos]="todos" (delete)="deleteTodo($event)" (done)="doneTodo($event)">
 
 </app-child>

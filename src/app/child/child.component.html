@@ -2,8 +2,18 @@
   <h2>Child component</h2>
   <ul>
     <li *ngFor="let todo of todos">
-      {{todo.label}}
+      <span *ngIf="todo.done; then complete else notcomplete"></span>
+      <ng-template #complete>
+        <del>{{todo.label}}</del>
+      </ng-template>
+      <ng-template #notcomplete>
+          {{todo.label}}
+        </ng-template>
       <button (click)="deleteTodo(todo)">&#10005;</button>
+      <span [hidden]="todo.done">
+        <button (click)="markdoneTodo(todo)">&#10003;</button>
+      </span>
+      
     </li>
   </ul>
 </div>

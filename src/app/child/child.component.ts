@@ -13,13 +13,19 @@ export class ChildComponent implements OnInit {
   }
   
   @Input()
-  todos: [];
+  todos: Object;
   
   @Output()
   delete: EventEmitter<Object> =  new EventEmitter<Object>();
+  
+  @Output()
+  done: EventEmitter<Object> = new EventEmitter<Object>();
 
   deleteTodo(todo){
     this.delete.emit(todo);
+  }
+  markdoneTodo(todo){
+    this.done.emit(todo);
   }
   
   
